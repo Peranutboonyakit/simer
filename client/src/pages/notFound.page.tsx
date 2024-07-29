@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import PrimaryButton from "../components/PrimaryButton";
+import { useNavigate } from "react-router-dom";
 
 const NotFoundPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-screen h-screen overflow-hidden bg-[#242424] relative">
       <img
@@ -39,7 +42,7 @@ const NotFoundPage = () => {
           title="GO HOME"
           width="md"
           rounded="rounded-full"
-          onClick={() => null}
+          onClick={() => navigate("/")}
         />
       </div>
     </div>

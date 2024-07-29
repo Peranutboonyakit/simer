@@ -3,7 +3,8 @@ import { useRoutes } from "react-router-dom";
 import LoginPage from "./pages/login.page";
 import NotFoundPage from "./pages/notFound.page";
 import HomePage from "./pages/home.page";
-import AuthLayout from "./authLayout";
+import AuthLayout from "./components/layouts/authLayout";
+import CollectionPage from "./pages/collection.page";
 
 const App = () => {
   const element = useRoutes([
@@ -21,6 +22,10 @@ const App = () => {
         {
           path: "/login",
           element: <LoginPage />,
+        },
+        {
+          path: "/collection/:brand",
+          element: <CollectionPage />,
         },
       ],
     },

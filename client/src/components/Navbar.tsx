@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <div
       className={classNames(
-        "w-full h-[80px] sticky top-0 transition duration-500 z-10",
+        "w-full h-[80px] sticky top-[-5px] transition duration-500 z-10",
         {
           "bg-white": scrollPosition < 25,
         },
@@ -63,18 +63,6 @@ const Navbar = () => {
           </div>
         </Link>
         <div className="flex items-center space-x-4">
-          <Link
-            to="/"
-            className="hover:text-primary-100 font-medium text-[16px]"
-          >
-            HOME
-          </Link>
-          <Link
-            to="/brands"
-            className="hover:text-primary-100 font-medium text-[16px]"
-          >
-            BRANDS
-          </Link>
           {auth.isLogIn ? (
             <div className="flex items-center space-x-4">
               <div className="p-2 transition-all rounded-full cursor-pointer ring-2 group ring-primary-300 hover:ring-primary-100">
@@ -85,7 +73,12 @@ const Navbar = () => {
                     className="w-5 h-5 border rounded-full"
                   />
                 ) : (
-                  <FaUser className="w-5 h-5 text-gray-700" />
+                  <FaUser
+                    className={classNames("w-5 h-5 text-gray-700", {
+                      "text-primary-300":
+                        scrollPosition >= 25,
+                    })}
+                  />
                 )}
               </div>
               <PrimaryButton

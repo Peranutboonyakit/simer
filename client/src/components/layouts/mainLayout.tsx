@@ -1,4 +1,4 @@
-import Navbar from "./components/Navbar";
+import Navbar from "../Navbar";
 
 interface Props {
   children: React.ReactNode;
@@ -6,7 +6,7 @@ interface Props {
 
 const MainLayout = ({ children }: Props) => {
   return (
-    <div className="w-screen h-full">
+    <div className="w-screen min-h-full">
       <Navbar />
       <div className="w-full h-full" style={{ height: "calc(100vh - 80px)" }}>
         {children}

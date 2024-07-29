@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 
-import { RootState, AppDispatch } from "../stores/store";
-import { postSignIn } from "../stores/slices/authSlice";
+// import { RootState, AppDispatch } from "../stores/store";
+// import { postSignIn } from "../stores/slices/authSlice";
 import PrimaryButton from "../components/PrimaryButton";
 
 const LoginPage = () => {
@@ -12,10 +12,8 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const auth = useSelector((state: RootState) => state.auth);
-  const dispatch = useDispatch<AppDispatch>();
-
-  console.log(auth);
+  // const auth = useSelector((state: RootState) => state.auth);
+  // const dispatch = useDispatch<AppDispatch>();
 
   return (
     <div className="relative flex items-center justify-center w-screen h-screen bg-black">
@@ -74,9 +72,10 @@ const LoginPage = () => {
                 <PrimaryButton
                   title="Sign in"
                   width=""
-                  onClick={() =>
-                    dispatch(postSignIn({ email: "test", password: "test" }))
-                  }
+                  onClick={() => null}
+                  // onClick={() =>
+                  //   dispatch(postSignIn({ email: "test", password: "test" }))
+                  // }
                 />
                 <div className="border-b border-gray-400" />
                 <div
